@@ -1,0 +1,58 @@
+#search: exact match using 'match'
+GET orgs-index/_search?pretty
+{
+ "size":10000,
+ "query":{
+   "match": {"ctep_id": "WI137"}
+ },
+ "_source": ["ctep_id"]
+}  
+
+
+#search: partial match using wildcard query
+GET orgs-index/_search?pretty
+{
+  "size":10000,
+  "query":{
+    "wildcard":{
+      "ctep_id":{
+        "value":"*WI*",
+        "boost": 2,
+        "rewrite":"constant_score"
+      }
+    }
+  },
+  "_source": ["ctep_id"]
+}  
+  
+#search: partial match using regexp query
+GET orgs-index/_search?pretty
+{
+  "size":10000,
+  "query":{
+    "regexp":{
+      "ctep_id": {
+        "value": "WI[0-9]{3}",
+        "flags": "ALL",
+        "case_insensitive": true,
+        "max_determinized_states": 10000,
+        "rewrite": "constant_score"
+      }
+    }
+  },
+  "_source": ["ctep_id"]
+} 
+  
+#search: partial match using query_string
+GET orgs-index/_search?pretty
+{
+  "size":10000,
+  "query":{
+    "query_string":{
+      "query":"*WI*",
+      "fields": ["ctep_id"]
+    }
+  },
+  "_source": ["ctep_id"]
+}  
+  

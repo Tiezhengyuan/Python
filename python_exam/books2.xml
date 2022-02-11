@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<data id="books">
+    <book title="The Little Prince" id="The Little Prince">
+        <author background="red">Antoine de Saint-Exupéry</author>
+        <year>1943</year>
+    <publisher><address id="address">345 Dr</address><name name="Elasa">Elasa</name></publisher></book>
+    <book title="Hamlet" id="Hamlet">
+        <author background="red">William Shakespeare</author>
+        <year>1603</year>
+    <publisher><address id="address">345 Dr</address><name name="Elasa">Elasa</name></publisher></book>
+</data>

@@ -1,0 +1,9 @@
+{
+  "posts": [
+    { "cid": 1, "production": "Ford", "year": 2000 }
+  ],
+  "comments": [
+    { "id": 1, "body": "some comment", "postId": 1 }
+  ],
+  "profile": { "name": "typicode" }
+}
